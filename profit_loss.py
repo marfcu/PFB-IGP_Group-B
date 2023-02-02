@@ -47,3 +47,12 @@ def profitloss_function():
 
             else: # If condition is not met, order will increase by 1
                 order += 1
+
+        # evaluate if deficit equals to 0 at the end of the loop
+        if deficit == 0:
+            # If condition is met, open file in append mode and write the computed amount in the summary report
+            with fp_summary.open(mode="a", encoding="UTF-8", newline="") as file:
+                file.write(f"[NET PROFIT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY\n")
+    
+    # close the file
+    file.close() 
